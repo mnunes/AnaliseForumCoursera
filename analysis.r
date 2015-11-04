@@ -23,7 +23,10 @@ doc <- tm_map(doc, removeNumbers)
 doc <- tm_map(doc, tolower)
 doc <- tm_map(doc, removeWords, stopwords("portuguese"))
 doc <- tm_map(doc, stripWhitespace)
-doc <- tm_map(doc, removeWords, c("olá", "nome", "todos", "boa", "sobre", "abraços", "paulo", "anos", "aqui", ""))
+doc <- tm_map(doc, removeWords, c("olá", "nome", "todos", "boa", "sobre", 
+"abraços", "abraço", "paulo", "anos", "aqui", "atualmente", "atuo", "silva", 
+"httplattescnpqbr", "formado", "tarde", "bom", "boa", "dia", "chamo", "noite", 
+"pessoal", "grande", "espero", "estado", "bem"))
 doc <- tm_map(doc, PlainTextDocument)
 
 # document term matrix
@@ -39,4 +42,4 @@ head(freq, 10)
 # wordcloud
 
 set.seed(142)
-wordcloud(names(freq), freq, min.freq=20)
+wordcloud(names(freq), freq, min.freq=15)
